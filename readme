@@ -1,0 +1,1 @@
+This is an application to manage email contacts. Here you can add Contacts, Contracts, Groups, Members and manage them. You can assign Contracts to Contacts, manage Groups, add members to Groups, send email to all members of the Groups directly. Mysql is used as the database in the application.

@@ -1,0 +1,39 @@
+<head>
+        <title>Group</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"></link>
+</head>
+
+
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">Contacts</a></li>
+      <li><a href="{% url 'contract' %}">Contracts</a></li>
+      <li class="active"><a href="{% url 'group' %}">Groups</a></li>
+      <li><a href="{% url 'member' %}">Members</a></li>
+      <li><a href="{% url 'upload_file' %}">Read</a></li>
+    </ul>
+  </div>
+</div>
+<br><h3 style="color:#6E7B8B">&nbsp Welcome Group</h3>
+<div class="well span5" style="background-color:#63B263">
+<form action="{% url 'group'  %}" method="post"  ><br>
+	{% csrf_token %}
+    {{ form.as_p }}
+	<input type="submit" class="btn btn-success" value="Add Group" /><br>
+</form>
+</div>
+<div class="well span5" style="background-color:#63B263">
+{% if groups %}
+    <h3 style="color:#6E7B8B">&nbsp List of Groups!!</h3>
+    <h5>Click on Group to sent GroupMail</h5><br>
+    <ul>
+      {% for group in groups %}
+       <li><a href="{% url 'email' group.id %}">{{ group.group_code}}</a></li>
+      {% endfor %}</ul>
+
+{% endif %}
+</div>
+</body>

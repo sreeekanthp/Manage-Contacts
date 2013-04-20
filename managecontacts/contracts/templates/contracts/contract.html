@@ -1,0 +1,26 @@
+<head>
+        <title>Contract</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"></link>
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">Contacts</a></li>
+      <li  class="active"><a href="{% url 'contract' %}">Contracts</a></li>
+      <li><a href="{% url 'group' %}">Groups</a></li>
+      <li><a href="{% url 'member' %}">Members</a></li>
+      <li><a href="{% url 'upload_file' %}">Read</a></li>
+    </ul>
+  </div>
+</div>
+<br><h3 style="color:#6E7B8B">&nbsp Welcome Contract</h3>
+<div class="well span5" style="background-color:#63B263">
+<form action="{% url 'contract'  %}" method="post"  ><br>
+	{% csrf_token %}
+    {{ form.as_p }}
+	<input type="submit" class="btn btn-success" value="Add contract" /><br>
+</form>
+</div>
+</body>

@@ -1,0 +1,32 @@
+<head>
+        <title>Contact</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"></link>
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="active"><a href="{% url 'contact' %}">Contacts</a></li>
+      <li><a href="{% url 'contract' %}">Contracts</a></li>
+      <li><a href="{% url 'group' %}">Groups</a></li>
+      <li><a href="{% url 'member' %}">Members</a></li>
+      <li><a href="{% url 'upload_file' %}">Read</a></li>
+    </ul>
+  </div>
+</div>
+<br><h3 style="color:#6E7B8B">&nbsp Welcome Contact</h3>
+<div class="well span5" style="background-color:#63B263">
+<form action="{% url 'contact'  %}" method="post"  ><br>
+	{% csrf_token %}
+    {{ form.as_p }}
+    {% if contracts %}
+    Contracts.<br>
+      {% for contract in contracts %}
+          {{ contract.from_date|date:"Y-m-d" }} to {{ contract.to_date|date:"Y-m-d" }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp <input type="checkbox" name="contract" value="{{contract.from_date|date:"Y-m-d"}}"><br>
+      {% endfor %}
+     {% endif %}<br><br>
+	<input type="submit" class="btn btn-success" value="Add contact" /><br>
+</form>
+</div>
+</body>

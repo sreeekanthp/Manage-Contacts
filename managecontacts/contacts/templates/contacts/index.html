@@ -1,0 +1,28 @@
+<html>
+<head>
+        <title>Home</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"></link>
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="active"><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">Contacts</a></li>
+      <li><a href="{% url 'contract' %}">Contracts</a></li>
+      <li><a href="{% url 'group' %}">Groups</a></li>
+      <li><a href="{% url 'member' %}">Members</a></li>
+      <li><a href="{% url 'upload_file' %}">Read</a></li>
+    </ul>
+  </div>
+</div>
+<div class="hero-unit" style="background-color:#63B263">
+<h2>Email Contacts Management</h2>
+<p style="color:#72587F"> This is an application to manage email contacts.<br>
+    Here you can add Contacts, Contraccts, Groups, Members and manage them.<br>
+    You  can assign contract to contacts, manage Groups, add members to groups,
+    send email to all members of the Groups directly..<br> 
+    Have fun. :) </p>
+</div>
+</body>
+</html>

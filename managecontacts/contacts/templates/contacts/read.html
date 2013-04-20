@@ -1,0 +1,27 @@
+<head>
+        <title>Read</title>
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"></link>
+</head>
+<body>
+<div class="navbar" style="color:red">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'contact' %}">Contacts</a></li>
+      <li><a href="{% url 'contract' %}">Contracts</a></li>
+      <li><a href="{% url 'group' %}">Groups</a></li>
+      <li><a href="{% url 'member' %}">Members</a></li>
+      <li class="active"><a href="{% url 'upload_file' %}">Read</a></li>
+    </ul>
+  </div>
+</div>
+<br><h3 style="color:#6E7B8B">&nbsp Read File</h3>
+<div class="well span5" style="background-color:#63B263">
+<form class="navbar-form pull-left" enctype="multipart/form-data" action="{% url 'upload_file'  %}" method="post">{% csrf_token %}
+	{{ form.as_p }}
+<input type="submit" value="upload" class="btn btn-success" />
+<p><b>Note:</b> Upload a Zip or Excel file</p>
+</form>
+</div>
+{{ success }}
+</body>
