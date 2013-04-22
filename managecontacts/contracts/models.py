@@ -13,7 +13,7 @@ class Contract(models.Model):
     total_email = models.IntegerField()
 
     def __unicode__(self):
-        return str(self.from_date)
+        return unicode(self.from_date)
 
 
 
