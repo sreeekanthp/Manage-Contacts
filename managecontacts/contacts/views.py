@@ -12,12 +12,7 @@ from groups.models import Group
 
 def index(request):
     '''Creates the view of index page.'''
-    contacts = Contact.objects.all()
-    contracts = Contract.objects.all()
-    groups = Group.objects.all()
-    members = Member.objects.all()
-    context = {'contacts' : contacts, 'contracts' : contracts, 'groups' : groups, 'members' :members} 
-    return render(request, 'contacts/index.html', context)
+    return render(request, 'contacts/index.html')
 
 
 def contact(request):
